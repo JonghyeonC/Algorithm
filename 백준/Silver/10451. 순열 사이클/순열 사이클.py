@@ -1,7 +1,3 @@
-import sys
-sys.setrecursionlimit(2000)     # runtimeError 발생 방지
-
-
 def dfs(v):
     visited[v] = 1              # 방문체크
     number = numbers[v-1]       # 배열에서 v에 해당하는 값이 다음 인덱스가 되지만 visited와 numbers의 인덱스가 같지 않으므로 -1

@@ -1,7 +1,7 @@
 def dfs(i, j, result, c):
     global cnt
-    if c == 7:
-        answer.append(result)
+    if c == 6:
+        answer.add(result)
         return
     else:
         for k in range(4):
@@ -18,8 +18,8 @@ for tc in range(1, T + 1):
     N = 4
     arr = [input().split() for _ in range(N)]
     cnt = 0
-    answer = []
+    answer = set()
     for i in range(N):
         for j in range(N):
-            dfs(i, j, '', 0)
-    print(f'#{tc} {len(set(answer))}')
+            dfs(i, j, arr[i][j], 0)
+    print(f'#{tc} {len(answer)}')

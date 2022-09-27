@@ -1,21 +1,24 @@
-arr = [int(input()) for _ in range(9)]
-answer = []
-for i in range(1 << 9):
-    total = 0
-    sub_list = []
-    for j in range(9):
-        if i & (1 << j):
-            sub_list.append(arr[j])
-    for i in range(len(sub_list)):
-        total += sub_list[i]
-    if len(sub_list) == 7 and total == 100:
-        answer = sub_list
+def f(k, s):
+    if sum(ans) > M:
+        return
+    if k == R:
+        if sum(ans) == M:
+            ans.sort()
+            for i in ans:
+                print(i)
+            exit()
+        else:
+            return
+    else:
+        for i in range(s, N):
+            ans.append(arr[i])
+            f(k + 1, i + 1)
+            ans.pop()
 
-for i in range(6):
-    min_idx = i
-    for j in range(i+1, 7):
-        if answer[min_idx] >= answer[j]:
-            min_idx = j
-    answer[i], answer[min_idx] = answer[min_idx], answer[i]
-for i in answer:
-    print(i)
+
+N = 9
+R = 7
+arr = [int(input()) for _ in range(9)]
+M = 100
+ans = []
+f(0, 0)

@@ -1,29 +1,28 @@
-c, r = map(int, input().split())
-n = int(input())
-arr = [[0] * c for _ in range(r)]
-dx = [0, 1, 0, -1]
-dy = [-1, 0, 1, 0]
+N, M = map(int, input().split())
+C = int(input())
+
+arr = [[0] * N for _ in range(M)]
+i = M - 1
+j = 0
 k = 0
-x = 0
-y = r - 1
+di = [-1, 0, 1, 0]
+dj = [0, 1, 0, -1]
+for num in range(1, N * M + 1):
+    arr[i][j] = num
+    i = i + di[k]
+    j = j + dj[k]
 
-for i in range(1, c * r + 1):
-    arr[y][x] = i
-
-    x += dx[k]
-    y += dy[k]
-
-    if x < 0 or x >= c or y < 0 or y >= r or arr[y][x] != 0:
-        x -= dx[k]
-        y -= dy[k]
+    if not (0 <= i < M and 0 <= j < N and arr[i][j] == 0):
+        i -= di[k]
+        j -= dj[k]
 
         k = (k + 1) % 4
-        x += dx[k]
-        y += dy[k]
-if n > r * c:
+        i += di[k]
+        j += dj[k]
+if C > N * M + 1:
     print(0)
 else:
-    for i in range(c):
-        for j in range(r):
-            if n == arr[j][i]:
-                print(f'{i+1} {r - j}')
+    for x in range(M):
+        for y in range(N):
+            if arr[x][y] == C:
+                print(f'{y + 1} {M - x}')

@@ -1,10 +1,10 @@
 T = int(input())
-for tc in range(1,T+1):
+for tc in range(1, T + 1):
     N = int(input())
-    arr = [list(map(str, input())) for _ in range(N)]
+    arr = [input() for _ in range(N)]
 
-    di = [1, -1, 0, 1]
-    dj = [1, 1, 1, 0]
+    di = [0, 1, 1, 1]
+    dj = [1, 1, 0, -1]
     ans = 'NO'
     for i in range(N):
         for j in range(N):

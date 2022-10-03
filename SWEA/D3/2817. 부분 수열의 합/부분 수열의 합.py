@@ -1,20 +1,17 @@
-def f(n, r, s):
+def f(k, total):
     global cnt
-    if r == 0:
-        if sum(p) == K:
+    if k == N:
+        if total == K:
             cnt += 1
     else:
-        for i in range(s, n - r + 1):
-            p[r-1] = arr[i]
-            f(n, r-1, i+1)
+        f(k + 1, total)
+        f(k + 1, total + arr[k])
 
 
 T = int(input())
-for tc in range(1, T + 1):
+for tc in range(1, T  +  1):
     N, K = map(int, input().split())
     arr = list(map(int, input().split()))
     cnt = 0
-    for R in range(1, N+1):
-        p = [0] * R
-        f(N, R, 0)
+    f(0, 0)
     print(f'#{tc} {cnt}')

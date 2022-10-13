@@ -2,6 +2,8 @@
 def dfs(i, j, cnt):
     global ans
     global flag
+    if ans < cnt:
+        ans = cnt
     for k in range(4):
         ni = i + di[k]
         nj = j + dj[k]
@@ -20,8 +22,11 @@ def dfs(i, j, cnt):
                         visited[ni][nj] = 0
                     flag = 0
                     arr[ni][nj] += minus
-    if ans < cnt:
-        ans = cnt
+            else:
+                continue
+        else:
+            continue
+    
 
 
 di = [1, 0, -1, 0]

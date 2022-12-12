@@ -1,12 +1,10 @@
-import sys
-a = int(sys.stdin.readline())
-cnt = 1
-ans = 0
+n = int(input())
+total = 0
+i = 1
 while True:
-    if a < cnt:
-       break
+    total += i
+    if total <= n:
+        i += 1
     else:
-        a = a - cnt
-        cnt += 1
-        ans += 1
-print(ans)
+        print(i-1)
+        break

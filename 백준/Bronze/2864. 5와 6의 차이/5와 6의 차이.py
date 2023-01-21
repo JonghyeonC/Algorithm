@@ -1,0 +1,8 @@
+numA, numB = input().split()
+mx_numA = numA.replace('5', '6')
+mn_numA = numA.replace('6', '5')
+mx_numB = numB.replace('5', '6')
+mn_numB = numB.replace('6', '5')
+max_num = int(mx_numA) + int(mx_numB)
+min_num = int(mn_numA) + int(mn_numB)
+print(f'{min_num} {max_num}')

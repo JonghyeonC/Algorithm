@@ -1,5 +1,5 @@
 from collections import deque
-
+import sys
 
 def bfs():
     while road:
@@ -34,8 +34,8 @@ di = [0, 1, 0, -1]
 dj = [1, 0, -1, 0]
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
-R, C = map(int, input().split())
-arr = [list(input()) for _ in range(R)]
+R, C = map(int, sys.stdin.readline().rstrip().split())
+arr = [list(sys.stdin.readline().rstrip()) for _ in range(R)]
 visited = [[0] * C for _ in range(R)]
 a = b = c = d = 0
 end_x, end_y = 0, 0

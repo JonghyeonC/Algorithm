@@ -1,9 +1,10 @@
-N, M = map(int, input().split(' '))
-li = [n for n in range(1, N+1)]
+import sys
 
-for m in range(M):
-    i, j = map(int, input().split(' '))
-    li = li[:i-1] + li[i-1:j][::-1] + li[j:]
 
-for rev in range(len(li)):
-    print(li[rev], end=' ')
+input = sys.stdin.readline
+N, M = map(int, input().split())
+arr = [i for i in range(1, N + 1)]
+for _ in range(M):
+    a, b = map(int, input().split())
+    arr = arr[:a - 1] + arr[a-1:b][::-1] + arr[b:]
+print(*arr)

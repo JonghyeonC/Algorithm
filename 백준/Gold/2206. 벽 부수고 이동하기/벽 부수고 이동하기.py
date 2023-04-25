@@ -1,4 +1,6 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
 
 def bfs():
@@ -25,7 +27,7 @@ def bfs():
 di = [1, 0, -1, 0]
 dj = [0, 1, 0, -1]
 N, M = map(int, input().split())
-graph = [list(map(int, input())) for _ in range(N)]
+graph = [list(map(int, input().strip())) for _ in range(N)]
 visited = [[[0] * 2 for _ in range(M)] for _ in range(N)]
 
 ans = bfs()

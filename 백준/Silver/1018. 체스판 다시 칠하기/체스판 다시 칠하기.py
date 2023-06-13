@@ -10,6 +10,7 @@ for i in range(N - 7):
         tmp = 0
         for x in range(i, i + 8):
             for y in range(j, j + 8):
+                # 무조건 맨 위가 B가 맞도록 생각하고 풒기
                 if (x + y) % 2 == 0:
                     if board[x][y] != 'B':
                         tmp += 1

@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N, M = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(N)]
 K = int(input())
@@ -9,3 +12,5 @@ for _ in range(K):
     i, j, x, y = map(int, input().split())
     result = dp[x][y] - dp[x][j - 1]- dp[i - 1][y] + dp[i - 1][j - 1]
     print(result)
+    
+## https://ssafy-story.tistory.com/74
